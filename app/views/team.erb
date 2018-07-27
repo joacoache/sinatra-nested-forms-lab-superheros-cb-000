@@ -1,3 +1,37 @@
+<h1>Create a Team and Heroes!</h1>
+
+<form action="/teams" method="POST">
+  <h3>Team Name: <input type="type" name="team[name]"></h3>
+  <h3>Team Motto: <input type="type" name="team[motto]"></h3>
+  <h2>Hero 1</h2>
+  <h3>Hero Name: <input type="type" name="team[members][][name]" id="member1_name"></h3>
+  <h3>Hero Power: <input type="type" name="team[members][][power]" id="member1_power"></h3>
+  <h3>Hero Bio: <input type="type" name="team[members][][bio]" id="member1_bio"></h3>
+  <br>
+  <h2>Hero 2</h2>
+  <h3>Hero Name: <input type="type" name="team[members][][name]" id="member2_name"></h3>
+  <h3>Hero Power: <input type="type" name="team[members][][power]" id="member2_power"></h3>
+  <h3>Hero Bio: <input type="type" name="team[members][][bio]" id="member2_bio"></h3>
+  <br>
+  <h2>Hero 3</h2>
+  <h3>Hero Name: <input type="type" name="team[members][][name]" id="member3_name"></h3>
+  <h3>Hero Power: <input type="type" name="team[members][][power]" id="member3_power"></h3>
+  <h3>Hero Bio: <input type="type" name="team[members][][bio]" id="member3_bio"></h3>
+  <input type="subit" value="Submit hero">
+</form>
 
 
-
+t 'submits the form' do
+  visit '/'
+  fill_in("team[name]", :with => "Team Ruby")
+  fill_in("team[motto]", :with => "We love Ruby!")
+  fill_in("member1_name", :with => "Amanda")
+  fill_in("member1_power", :with => "Ruby")
+  fill_in("member1_bio", :with => "I love Ruby!")
+  fill_in("member2_name", :with => "Arel")
+  fill_in("member2_power", :with => "JavaScript")
+  fill_in("member2_bio", :with => "I love JavaScript!")
+  fill_in("member3_name", :with => "Katie")
+  fill_in("member3_power", :with => "Sinatra")
+  fill_in("member3_bio", :with => "I love Sinatra!")
+  click_button 'submit'
