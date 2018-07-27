@@ -3,7 +3,7 @@ class Hero
   attr_accessor :name, :power, :bio
 
   @@all = []
-  
+
   def initialize(params)
     @name = params[:name]
     @power = params[:power]
@@ -13,6 +13,6 @@ class Hero
 
   def self.all
     @@all
-  ends
+  end
 
 end
